@@ -77,5 +77,5 @@ func (dev *Dev) initLogFile(logFolder, logFile string) {
 	if err != nil {
 		log.Fatalf("dev log file not created: %v", err)
 	}
-	dev.logger = log.New(w, "[DEV] ", log.Ldate|log.Ltime|log.Llongfile)
+	dev.logger = log.New(w, "[DEV] ", log.Ldate|log.Ltime)
 }
