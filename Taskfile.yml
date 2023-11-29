@@ -1,0 +1,13 @@
+# https://taskfile.dev
+
+version: "3"
+
+includes:
+  tests: ./tests/Taskfile.yml
+
+tasks:
+  default:
+    desc: List all available tasks
+    cmds:
+      - task --list-all
+    silent: true
