@@ -56,6 +56,21 @@ func (dev *Dev) Printf(format string, v ...any) {
 	dev.logger.Printf(format, v...)
 }
 
+func (dev *Dev) Enter(funcName string) string {
+	dev.Printf("Entering %s", funcName)
+	return funcName
+}
+
+func (dev *Dev) ExitWithError(funcName string, code int, err error) {
+	dev.Printf("  < %s exit[%2d] on error: %v", funcName, code, err)
+}
+
+func (dev *Dev) Exit(funcName string) {
+	dev.Printf("< Exiting %s", funcName)
+}
+
+// ==========
+
 func tempFolder() string {
 	temp := os.Getenv("TEMP")
 	if temp == "" {
