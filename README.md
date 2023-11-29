@@ -18,3 +18,11 @@ dl.Printf("Printf also enabled: %d, %d, %d", 1,2,3)
 
 dl.DisableLogging()
 ```
+
+Standardised output:
+
+```go
+fn := dl.Enter("FuncName")
+dl.ExitWithError(fn, 1, err)
+dl.Exit(fn)
+```
